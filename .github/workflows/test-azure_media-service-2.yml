@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - media-service-2
+name: Build and deploy JAR app to Azure Web App - media-service-2
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: java-app
-        path: '${{ github.workspace }}/target/*.war'
+        path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,5 +49,5 @@ jobs:
       with:
         app-name: 'media-service-2'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e5688a961f784d2983439ee28aea6a43 }}
-        package: '*.war'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3f3811aeb6a943338bf7ff738c03ec3e }}
+        package: '*.jar'
