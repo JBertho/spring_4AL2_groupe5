@@ -36,11 +36,8 @@ public class MediaController {
     private final DeleteMedia deleteMedia;
 
     @GetMapping
-    public ResponseEntity<List<MediaResponse>> findAll() {
-        var medias = findAllMedias.execute().stream()
-                .map(MediaAdapter::domainToResponse)
-                .collect(Collectors.toList());
-        return ok(medias);
+    public String findAll() {
+        return "WESH WESH";
     }
 
     @GetMapping("{id}")
